@@ -46,13 +46,11 @@ def load_keypoint_data(data_dir, label_map):
                 y.append(label)
     return np.array(X), np.array(y)
 
-# Veri yükleme (örnek yol; kendi verinizi ayarlayın)
 data_dir = "frames"
 label_map = {"chest fly machine": 0, "leg extension": 1, "plank": 2, "pull Up": 3, "squat": 4, "tbar row": 5, "tricep dips": 6}
 
 X, y = load_keypoint_data(data_dir, label_map)
 
-# Eğitim ve test setlerini ayırma
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
